@@ -4,7 +4,16 @@ Aplikasi pemesanan makanan berbasis Android yang dibuat menggunakan Kotlin. Apli
 
 ## 📱 Screenshots
 
-> *Tambahkan screenshot aplikasi di sini*
+<div style="display: flex; gap: 10px;">
+  <img src="screenshots/Screen 1.png" width="200" />
+  <img src="screenshots/Screen 2.png" width="200" />
+  <img src="screenshots/Screen 3.png" width="200" />
+  <img src="screenshots/Screen 4.png" width="200" />
+  <img src="screenshots/Screen 5.png" width="200" />
+  <img src="screenshots/Screen 6.png" width="200" />
+  <img src="screenshots/Screen 7.png" width="200" />
+  <img src="screenshots/Screen 8.png" width="200" />
+</div>
 
 ## ✨ Fitur
 
