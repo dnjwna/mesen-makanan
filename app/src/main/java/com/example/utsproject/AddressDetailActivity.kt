@@ -16,6 +16,7 @@ class AddressDetailActivity : Activity() {
         val alamat = intent.getStringExtra("alamat") ?: ""
         val menuName = intent.getStringExtra("menuName") ?: ""
         val price = intent.getStringExtra("price") ?: ""
+        val total = intent.getStringExtra("total") ?: ""
 
         // Set username di TextView
         val tvUsername = findViewById<TextView>(R.id.tvUsername)
@@ -27,6 +28,8 @@ class AddressDetailActivity : Activity() {
             
             Menu: $menuName
             Harga: $price
+            Biaya Pengiriman: Rp 5.000
+            Total: $total
             
             Dikirim ke:
             $alamat
@@ -36,7 +39,7 @@ class AddressDetailActivity : Activity() {
 
         val btnKirim = findViewById<Button>(R.id.btnKirim)
         btnKirim.setOnClickListener {
-            Toast.makeText(this, "Pesanan $menuName berhasil dipesan!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Pesanan $menuName berhasil dipesan! Total: $total", Toast.LENGTH_LONG).show()
             finish()
         }
     }

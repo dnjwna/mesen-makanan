@@ -23,7 +23,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".LocationActivity" />
+        <activity android:name=".PesananActivity" />
         <activity android:name=".AddressActivity" />
         <activity android:name=".AddressDetailActivity" />
 

@@ -16,6 +16,7 @@ class AddressActivity : Activity() {
         val username = intent.getStringExtra("username") ?: "Nazwa"
         val menuName = intent.getStringExtra("menuName") ?: ""
         val price = intent.getStringExtra("price") ?: ""
+        val total = intent.getStringExtra("total") ?: ""
 
         // Set username di TextView
         val tvUsername = findViewById<TextView>(R.id.tvUsername)
@@ -36,6 +37,7 @@ class AddressActivity : Activity() {
                 intent.putExtra("alamat", alamat)
                 intent.putExtra("menuName", menuName)
                 intent.putExtra("price", price)
+                intent.putExtra("total", total)
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()

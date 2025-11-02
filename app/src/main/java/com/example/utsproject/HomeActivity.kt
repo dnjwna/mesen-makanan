@@ -87,7 +87,7 @@ class HomeActivity : Activity() {
     }
 
     private fun selectMenu(username: String, menuName: String, price: String) {
-        val intent = Intent(this, LocationActivity::class.java)
+        val intent = Intent(this, PesananActivity::class.java)
         intent.putExtra("username", username)
         intent.putExtra("menuName", menuName)
         intent.putExtra("price", price)
