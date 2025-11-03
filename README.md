@@ -26,9 +26,9 @@ Aplikasi pemesanan makanan berbasis Android yang dibuat menggunakan Kotlin. Apli
   - Tampilan 10 menu makanan dengan gambar
   - Informasi harga dan deskripsi
   - Scroll view untuk navigasi yang smooth
+  - Fitur Keranjang
 
 - 📍 **Location & Delivery**
-  - Pilih lokasi pengiriman
   - Input alamat lengkap
   - Konfirmasi pesanan
 
@@ -69,9 +69,9 @@ app/
 │       │   ├── LoginActivity.kt             # Screen 3: Form Login
 │       │   ├── RegisterActivity.kt          # Screen 4: Form Register
 │       │   ├── HomeActivity.kt              # Screen 5: Menu Makanan
-│       │   ├── LocationActivity.kt          # Screen 6: Lokasi Pengiriman
+│       │   ├── PesananActivity.kt           # Screen 6: Cek Pesanan
 │       │   ├── AddressActivity.kt           # Screen 7: Input Alamat
-│       │   └── AddressDetailActivity.kt     # Screen 8: Konfirmasi
+│       │   └── ConfirmationActivity.kt      # Screen 8: Konfirmasi
 │       │
 │       ├── res/
 │       │   ├── layout/
@@ -80,9 +80,9 @@ app/
 │       │   │   ├── activity_login.xml
 │       │   │   ├── activity_register.xml
 │       │   │   ├── activity_home.xml
-│       │   │   ├── activity_location.xml
+│       │   │   ├── activity_pesanan.xml
 │       │   │   ├── activity_address.xml
-│       │   │   └── activity_address_detail.xml
+│       │   │   └── activity_confirmation.xml
 │       │   │
 │       │   └── drawable/
 │       │       ├── button_background.xml
@@ -92,6 +92,7 @@ app/
 │       │       ├── ic_home.xml
 │       │       ├── ic_order.xml
 │       │       ├── ic_profile.xml
+│       │       ├── badge_background.xml
 │       │       └── (gambar menu makanan)
 │       │
 │       └── AndroidManifest.xml
@@ -151,7 +152,7 @@ graph TD
     C --> E[Home - Menu Makanan]
     D --> E
     E --> F[Pilih Menu]
-    F --> G[Location - Konfirmasi Lokasi]
+    F --> G[Pesanan - Cek Pesanan]
     G --> H[Input Alamat]
     H --> I[Konfirmasi Pesanan]
     I --> J[Pesanan Berhasil]
