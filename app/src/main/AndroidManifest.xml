@@ -25,7 +25,7 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".PesananActivity" />
         <activity android:name=".AddressActivity" />
-        <activity android:name=".AddressDetailActivity" />
+        <activity android:name=".ConfirmationActivity" />
 
     </application>
 

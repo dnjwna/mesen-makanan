@@ -30,7 +30,7 @@ class AddressActivity : Activity() {
             val alamat = etAlamatLengkap.text.toString()
 
             if (nama.isNotEmpty() && alamat.isNotEmpty()) {
-                val intent = Intent(this, AddressDetailActivity::class.java)
+                val intent = Intent(this, ConfirmationActivity::class.java)
                 intent.putExtra("username", username)
                 intent.putExtra("nama", nama)
                 intent.putExtra("alamat", alamat)

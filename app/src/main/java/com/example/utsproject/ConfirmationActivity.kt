@@ -6,10 +6,10 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 
-class AddressDetailActivity : Activity() {
+class ConfirmationActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_address_detail)
+        setContentView(R.layout.activity_confirmation)
 
         val username = intent.getStringExtra("username") ?: "Nazwa"
         val nama = intent.getStringExtra("nama") ?: ""
