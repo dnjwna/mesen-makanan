@@ -9,7 +9,8 @@ Aplikasi pemesanan makanan berbasis Android yang dibuat menggunakan Kotlin. Apli
   <img src="screenshots/Screen 2.png" width="200" />
   <img src="screenshots/Screen 3.png" width="200" />
   <img src="screenshots/Screen 4.png" width="200" />
-
+  <img src="screenshots/Screen 5.png" width="200" />
+  <img src="screenshots/Screen 6.png" width="200" />
   <img src="screenshots/Screen 7.png" width="200" />
   <img src="screenshots/Screen 8.png" width="200" />
 </div>
