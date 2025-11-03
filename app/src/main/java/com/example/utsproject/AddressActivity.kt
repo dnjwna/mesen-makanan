@@ -14,8 +14,7 @@ class AddressActivity : Activity() {
         setContentView(R.layout.activity_address)
 
         val username = intent.getStringExtra("username") ?: "Nazwa"
-        val menuName = intent.getStringExtra("menuName") ?: ""
-        val price = intent.getStringExtra("price") ?: ""
+        val subtotal = intent.getStringExtra("subtotal") ?: ""
         val total = intent.getStringExtra("total") ?: ""
 
         // Set username di TextView
@@ -35,8 +34,7 @@ class AddressActivity : Activity() {
                 intent.putExtra("username", username)
                 intent.putExtra("nama", nama)
                 intent.putExtra("alamat", alamat)
-                intent.putExtra("menuName", menuName)
-                intent.putExtra("price", price)
+                intent.putExtra("subtotal", subtotal)
                 intent.putExtra("total", total)
                 startActivity(intent)
             } else {

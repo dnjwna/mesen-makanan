@@ -32,9 +32,17 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="#000000"
-                android:layout_marginBottom="24dp"/>
+                android:layout_marginBottom="16dp"/>
 
-            <!-- Card Pesanan -->
+            <!-- Container untuk list items -->
+            <LinearLayout
+                android:id="@+id/containerCartItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Card Total -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -46,7 +54,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Detail Pesanan"
+                    android:text="Ringkasan Pembayaran"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="#000000"
@@ -62,49 +70,18 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Menu"
+                        android:text="Subtotal"
                         android:textSize="14sp"
                         android:textColor="#666666"/>
 
                     <TextView
-                        android:id="@+id/tvMenuName"
+                        android:id="@+id/tvSubtotal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nasi Goreng"
+                        android:text="Rp 0"
                         android:textSize="14sp"
-                        android:textStyle="bold"
                         android:textColor="#000000"/>
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="8dp">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Harga"
-                        android:textSize="14sp"
-                        android:textColor="#666666"/>
-
-                    <TextView
-                        android:id="@+id/tvPrice"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Rp 25.000"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:textColor="#4A90E2"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#E0E0E0"
-                    android:layout_marginVertical="12dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -152,7 +129,7 @@
                         android:id="@+id/tvTotal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Rp 30.000"
+                        android:text="Rp 0"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="#4A90E2"/>

@@ -3,11 +3,17 @@ package com.example.utsproject
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 
 class HomeActivity : Activity() {
+
+    private lateinit var btnViewCart: Button
+    private lateinit var tvCartBadge: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -15,6 +21,22 @@ class HomeActivity : Activity() {
         val username = intent.getStringExtra("username") ?: "Nazwa"
         val tvUsername = findViewById<TextView>(R.id.tvUsername)
         tvUsername.text = "Halo $username,"
+
+        // Cart button
+        btnViewCart = findViewById(R.id.btnViewCart)
+        tvCartBadge = findViewById(R.id.tvCartBadge)
+
+        updateCartBadge()
+
+        btnViewCart.setOnClickListener {
+            if (CartManager.isEmpty()) {
+                Toast.makeText(this, "Keranjang masih kosong", Toast.LENGTH_SHORT).show()
+            } else {
+                val intent = Intent(this, PesananActivity::class.java)
+                intent.putExtra("username", username)
+                startActivity(intent)
+            }
+        }
 
         // Menu Items
         val menuNasiGoreng = findViewById<LinearLayout>(R.id.menuNasiGoreng)
@@ -29,43 +51,43 @@ class HomeActivity : Activity() {
         val menuNasiKuning = findViewById<LinearLayout>(R.id.menuNasiKuning)
 
         menuNasiGoreng.setOnClickListener {
-            selectMenu(username, "Nasi Goreng", "Rp 25.000")
+            addToCart("Nasi Goreng", "Rp 25.000")
         }
 
         menuMieAyam.setOnClickListener {
-            selectMenu(username, "Mie Ayam", "Rp 20.000")
+            addToCart("Mie Ayam", "Rp 20.000")
         }
 
         menuAyamGoreng.setOnClickListener {
-            selectMenu(username, "Ayam Goreng + Nasi", "Rp 30.000")
+            addToCart("Ayam Goreng + Nasi", "Rp 30.000")
         }
 
         menuSoto.setOnClickListener {
-            selectMenu(username, "Soto Ayam", "Rp 22.000")
+            addToCart("Soto Ayam", "Rp 22.000")
         }
 
         menuRendang.setOnClickListener {
-            selectMenu(username, "Rendang + Nasi", "Rp 35.000")
+            addToCart("Rendang + Nasi", "Rp 35.000")
         }
 
         menuGadoGado.setOnClickListener {
-            selectMenu(username, "Gado-Gado", "Rp 18.000")
+            addToCart("Gado-Gado", "Rp 18.000")
         }
 
         menuBakso.setOnClickListener {
-            selectMenu(username, "Bakso Kuah", "Rp 23.000")
+            addToCart("Bakso Kuah", "Rp 23.000")
         }
 
         menuNasiUduk.setOnClickListener {
-            selectMenu(username, "Nasi Uduk Komplit", "Rp 28.000")
+            addToCart("Nasi Uduk Komplit", "Rp 28.000")
         }
 
         menuSatePadang.setOnClickListener {
-            selectMenu(username, "Sate Padang", "Rp 32.000")
+            addToCart("Sate Padang", "Rp 32.000")
         }
 
         menuNasiKuning.setOnClickListener {
-            selectMenu(username, "Nasi Kuning Tumpeng", "Rp 27.000")
+            addToCart("Nasi Kuning Tumpeng", "Rp 27.000")
         }
 
         // Bottom Navigation
@@ -86,11 +108,24 @@ class HomeActivity : Activity() {
         }
     }
 
-    private fun selectMenu(username: String, menuName: String, price: String) {
-        val intent = Intent(this, PesananActivity::class.java)
-        intent.putExtra("username", username)
-        intent.putExtra("menuName", menuName)
-        intent.putExtra("price", price)
-        startActivity(intent)
+    override fun onResume() {
+        super.onResume()
+        updateCartBadge()
+    }
+
+    private fun addToCart(menuName: String, price: String) {
+        CartManager.addItem(menuName, price)
+        updateCartBadge()
+        Toast.makeText(this, "$menuName ditambahkan ke keranjang", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun updateCartBadge() {
+        val totalItems = CartManager.getTotalItems()
+        if (totalItems > 0) {
+            tvCartBadge.visibility = View.VISIBLE
+            tvCartBadge.text = totalItems.toString()
+        } else {
+            tvCartBadge.visibility = View.GONE
+        }
     }
 }
